@@ -1,4 +1,3 @@
-
 // Project Euler - Problem 4
 // Largest palindrome product
 
@@ -9,6 +8,10 @@ import (
 	"strconv"
 )
 
+func init() {
+	registerFunction("4", problem4)
+}
+
 func is_palindrome(s string) bool {
 	for i := 0; i < len(s); i++ {
 		if s[i] != s[len(s)-1-i] {
@@ -18,7 +21,7 @@ func is_palindrome(s string) bool {
 	return true
 }
 
-func main() {
+func problem4() {
 
 	var largest int
 

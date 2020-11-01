@@ -1,4 +1,3 @@
-
 /*
 Project Euler - Problem 6
 Sum square difference
@@ -10,7 +9,11 @@ package main
 
 import "fmt"
 
-func main() {
+func init() {
+	registerFunction("6", problem6)
+}
+
+func problem6() {
 	sumSquares := 0
 	squareSum := 0
 	for i := 1; i <= 100; i++ {
