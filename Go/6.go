@@ -9,10 +9,6 @@ package main
 
 import "fmt"
 
-func init() {
-	registerFunction("6", problem6)
-}
-
 func problem6() {
 	sumSquares := 0
 	squareSum := 0

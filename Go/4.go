@@ -8,11 +8,7 @@ import (
 	"strconv"
 )
 
-func init() {
-	registerFunction("4", problem4)
-}
-
-func is_palindrome(s string) bool {
+func isPalindrome(s string) bool {
 	for i := 0; i < len(s); i++ {
 		if s[i] != s[len(s)-1-i] {
 			return false
@@ -29,7 +25,7 @@ func problem4() {
 		for j := 999; j > 100; j-- {
 			n := i * j
 			s := strconv.Itoa(n)
-			if is_palindrome(s) {
+			if isPalindrome(s) {
 				if n > largest {
 					largest = n
 				}

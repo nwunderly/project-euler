@@ -28,3 +28,11 @@ func main() {
 	}
 	fmt.Println("Done.")
 }
+
+func init() {
+	registerFunction("1", problem1)
+	registerFunction("4", problem4)
+	registerFunction("5", problem5)
+	registerFunction("6", problem6)
+	registerFunction("9", problem9)
+}

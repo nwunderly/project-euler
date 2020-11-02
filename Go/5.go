@@ -5,10 +5,6 @@ package main
 
 import "fmt"
 
-func init() {
-	registerFunction("5", problem5)
-}
-
 func makeDivisibleBy(number int, factor int) int {
 	for i := 1; i <= factor; i++ {
 		if (number*i)%factor == 0 {
