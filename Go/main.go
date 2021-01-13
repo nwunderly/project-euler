@@ -39,7 +39,7 @@ var funcMap = map[int]func(){
 	9  : problem9,
 	10 : problem10,
 	11 : problem11,
-	//12 : problem12,
+	12 : problem12,
 	//13 : problem13,
 	//14 : problem14,
 	//15 : problem15,
