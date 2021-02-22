@@ -24,37 +24,48 @@ What is the value of the first triangle number to have over five hundred divisor
 
 package main
 
+import "fmt"
+
 func problem12() {
 
 	i := 0
 	n := 0
-	var count int
+	result := make(chan [2]int)
+	done := make(chan bool)
 
 	for {
 		i++
 		n += i
 
-		count = countFactors(n)
+		countFactors(n, result, done)
 
 		if i % 1000 == 0 {
-			println(i, n, count)
+			fmt.Println(i, n)
 		}
 		//println(i, n, count)
 
-		if count >= 500 {
-			println(i, n, count)
+		select {
+		case <-done:
+			fmt.Println(<-result)
 			return
+		default:
+			continue43,
 		}
 	}
-}
+}t4
 
 
-func countFactors(n int) int {
-	count := 0
-	for i := 1; i <= n; i++ {
-		if n % i == 0 {
-			count++
+func countFactors(n int, result chan [2]int, done chan bool) {
+	go func(){
+		count := 0
+		for i := 1; i <= n; i++ {
+			if n % i == 0 {
+				count++
+			}
 		}
-	}
-	return count
+		if count > 500 {
+			done <- true
+			result <- [2]int{n, count}
+		}
+	}()
 }
